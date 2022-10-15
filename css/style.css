@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: sans-serif;
 }
@@ -20,4 +24,49 @@ html,
 
 .title {
   font-size: 3rem;
+}
+
+#offlinescreen {
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:red;
+}
+
+#offlinescreen > #mainmessage {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#installscreen {
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:lime;
+}
+
+#installscreen > #mainmessage {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+@media all and (display-mode: standalone) {
+  #browsermessage { display: none }
+}
+
+@media all and (display-mode: browser) {
+  #standalonemessage { display: none }
 }
